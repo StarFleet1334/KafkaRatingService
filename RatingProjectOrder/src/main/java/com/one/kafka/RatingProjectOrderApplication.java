@@ -15,11 +15,11 @@ import java.util.List;
 @SpringBootApplication
 public class RatingProjectOrderApplication implements CommandLineRunner {
 
-	@Autowired
-	private ProductRequestInitiator productRequestInitiator;
-
-	private static final int DELAY = 1000;
-	private static final int NUMBER_OF_PRODUCT = 5;
+//	@Autowired
+//	private ProductRequestInitiator productRequestInitiator;
+//
+//	private static final int DELAY = 1000;
+//	private static final int NUMBER_OF_PRODUCT = 5;
 
 	public static void main(String[] args) {
 		SpringApplication.run(RatingProjectOrderApplication.class, args);
@@ -27,6 +27,6 @@ public class RatingProjectOrderApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		productRequestInitiator.createAndSendProductFeedback(NUMBER_OF_PRODUCT,DELAY);
+//		productRequestInitiator.createAndSendProductFeedback(NUMBER_OF_PRODUCT,DELAY);
 	}
 }
