@@ -7,13 +7,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.EnableKafkaStreams;
 import org.springframework.kafka.annotation.KafkaStreamsDefaultConfiguration;
 import org.springframework.kafka.config.KafkaStreamsConfiguration;
-
 import java.util.HashMap;
+
 
 @Configuration
 @EnableKafkaStreams
 public class KafkaStreamConfig {
-
 
     @Bean(name = KafkaStreamsDefaultConfiguration.DEFAULT_STREAMS_CONFIG_BEAN_NAME)
     public KafkaStreamsConfiguration kafkaStreamsConfiguration() {
@@ -26,4 +25,6 @@ public class KafkaStreamConfig {
 
         return new KafkaStreamsConfiguration(props);
     }
+
+
 }

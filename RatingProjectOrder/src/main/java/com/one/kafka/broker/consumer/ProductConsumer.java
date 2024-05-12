@@ -15,7 +15,7 @@ public class ProductConsumer {
 
     private List<ProductMessage> productMessageList = new ArrayList<>();
 
-    @KafkaListener(topics = "t-product-order")
+    @KafkaListener(topics = "t-product-order",containerFactory = "productOrderContainerFactory")
     public void consumeProduct(ProductMessage productMessage) {
         productMessageList.add(productMessage);
         LOGGER.info("Product Received : {}",productMessage);
