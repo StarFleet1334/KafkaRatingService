@@ -35,6 +35,11 @@ public class KafkaConfig {
         return TopicBuilder.name("t-product-order").partitions(1).replicas(1).build();
     }
 
+    @Bean
+    public NewTopic topicInventory() {
+        return TopicBuilder.name("t-inventory").partitions(1).replicas(1).build();
+    }
+
     @Autowired
     private KafkaProperties kafkaProperties;
 
@@ -48,7 +53,7 @@ public class KafkaConfig {
         configurer.configure(factory,consumerFactory());
 
 
-        factory.setCommonErrorHandler(new GlobalErrorHandler(kafkaTemplate,"dead-product-order"));
+        factory.setCommonErrorHandler(new GlobalErrorHandler(kafkaTemplate,"t-dead-product-order"));
 
         return factory;
     }
